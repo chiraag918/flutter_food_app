@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_food_app/data/dummy_data.dart';
 import 'package:flutter_food_app/widgets/category_item.dart';
 
-class Categories extends StatelessWidget {
-  const Categories({super.key});
+class CategoriesScreen extends StatelessWidget {
+  const CategoriesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
