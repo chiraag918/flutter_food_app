@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_app/data/dummy_data.dart';
+import 'package:flutter_food_app/widgets/category_item.dart';
 
 class Categories extends StatelessWidget {
   const Categories({super.key});
@@ -10,43 +12,20 @@ class Categories extends StatelessWidget {
             title: const Text(
           "Food App",
         )),
-        body: GridView(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 3 / 2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20,
+        body: Padding(
+          padding: const EdgeInsets.all(24),
+          child: GridView(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 3 / 2,
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 20,
+            ),
+            children: [
+              for (final category in availableCategories)
+                CategoryItem(category: category)
+            ],
           ),
-          children: const [
-            Text(
-              "1",
-              style: TextStyle(color: Colors.white),
-            ),
-            Text(
-              "2",
-              style: TextStyle(color: Colors.white),
-            ),
-            Text(
-              "3",
-              style: TextStyle(color: Colors.white),
-            ),
-            Text(
-              "4",
-              style: TextStyle(color: Colors.white),
-            ),
-            Text(
-              "5",
-              style: TextStyle(color: Colors.white),
-            ),
-            Text(
-              "6",
-              style: TextStyle(color: Colors.white),
-            ),
-            Text(
-              "7",
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
         ));
   }
 }
